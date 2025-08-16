@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.4'
+	id 'org.springframework.boot' version '3.4.8'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -30,10 +30,17 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+	implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.2.1'
+	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'com.drivz.commonLibrary:drivz-commonlibrary:0.0.3-SNAPSHOT'
+	
+	// local library
+	implementation 'com.drivz.commonLibrary:drivz-commonlibrary:0.0.5-SNAPSHOT'
 }
 
 tasks.named('test') {
